@@ -7,7 +7,7 @@ import (
 
 type User struct {
 	Name string
-	Bio  template.HTML
+	Bio  template.HTML // XSS?
 }
 
 func main() {
