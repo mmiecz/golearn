@@ -13,13 +13,13 @@ import (
 func main() {
 	r := chi.NewRouter()
 
-	homeTemplate := views.Must(views.ParseFS(templates.FS, "layout-page.gohtml", "home.gohtml"))
-	contactTemplate := views.Must(views.ParseFS(templates.FS, "layout-page.gohtml", "contact.gohtml"))
+	homeTemplate := views.Must(views.ParseFS(templates.FS, "home.gohtml", "tailwind.gohtml"))
+	contactTemplate := views.Must(views.ParseFS(templates.FS, "contact.gohtml", "tailwind.gohtml"))
 
 	r.Use(middleware.Logger)
 	r.Get("/", controllers.StaticHandler(homeTemplate))
 	r.Get("/contact", controllers.StaticHandler(contactTemplate))
-	r.Get("/faq", controllers.FAQ(views.Must(views.ParseFS(templates.FS, "faq.gohtml"))))
+	r.Get("/faq", controllers.FAQ(views.Must(views.ParseFS(templates.FS, "faq.gohtml", "tailwind.gohtml"))))
 	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "https://http.cat/status/404", 404)
 	})

@@ -21,7 +21,15 @@ func FAQ(tpl views.Template) http.HandlerFunc {
 		},
 		{
 			Question: "Question 2?",
-			Answer:   "Click \n<a href=\"https://example.com\">here</a>\n",
+			Answer:   "Placeholder 2",
+		},
+		{
+			Question: "Question 3?",
+			Answer:   "Placeholder 3",
+		},
+		{
+			Question: "Question 4?",
+			Answer:   "Placeholder 4",
 		},
 	}
 	return func(w http.ResponseWriter, r *http.Request) {
