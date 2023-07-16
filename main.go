@@ -13,8 +13,8 @@ import (
 func main() {
 	r := chi.NewRouter()
 
-	homeTemplate := views.Must(views.ParseFS(templates.FS, "home.gohtml"))
-	contactTemplate := views.Must(views.ParseFS(templates.FS, "contact.gohtml"))
+	homeTemplate := views.Must(views.ParseFS(templates.FS, "layout-page.gohtml", "home.gohtml"))
+	contactTemplate := views.Must(views.ParseFS(templates.FS, "layout-page.gohtml", "contact.gohtml"))
 
 	r.Use(middleware.Logger)
 	r.Get("/", controllers.StaticHandler(homeTemplate))
