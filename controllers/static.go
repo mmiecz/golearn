@@ -7,7 +7,7 @@ import (
 )
 
 type Static struct {
-	Template views.Template
+	Template Template
 }
 
 func FAQ(tpl views.Template) http.HandlerFunc {
